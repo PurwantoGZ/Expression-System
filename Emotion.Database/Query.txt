@@ -1,0 +1,9 @@
+SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`;         
+                         
+SELECT `emotion`.`training`.`idOutput`, (`F1`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F1',
+					(`F2`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F2',
+					(`F3`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F3',
+					(`F4`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F4',
+					(`F5`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F5',
+					(`F6`/(SELECT GREATEST(MAX(`F1`),MAX(`F2`),MAX(`F3`),MAX(`F4`),MAX(`F5`),MAX(`F6`)) FROM `training`))AS 'F6'
+FROM `emotion`.`training`;

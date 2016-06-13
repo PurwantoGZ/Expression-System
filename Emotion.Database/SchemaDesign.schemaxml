@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">emotion</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="favorite" view="colnames">
+<left>196</left>
+<top>4</top>
+<width>123</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `favorite` (
+  `idFavorite` int(9) NOT NULL AUTO_INCREMENT,
+  `favoriteName` text,
+  `priority` int(3) DEFAULT NULL,
+  `idUser` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idFavorite`),
+  KEY `idUser` (`idUser`),
+  CONSTRAINT `favorite_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="user" view="colnames">
+<left>354</left>
+<top>182</top>
+<width>96</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `user` (
+  `idUser` varchar(255) NOT NULL,
+  `fullName` text,
+  `gender` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="training" view="colnames">
+<left>590</left>
+<top>0</top>
+<width>102</width>
+<height>231</height>
+<sql_create_table>CREATE TABLE `training` (
+  `idTraining` int(9) NOT NULL AUTO_INCREMENT,
+  `idOutput` varchar(3) NOT NULL,
+  `F1` double NOT NULL,
+  `F2` double NOT NULL,
+  `F3` double NOT NULL,
+  `F4` double NOT NULL,
+  `F5` double NOT NULL,
+  `F6` double NOT NULL,
+  `idUser` varchar(255) NOT NULL,
+  PRIMARY KEY (`idTraining`),
+  KEY `idUser` (`idUser`),
+  KEY `idOutput` (`idOutput`),
+  CONSTRAINT `training_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`),
+  CONSTRAINT `training_ibfk_2` FOREIGN KEY (`idOutput`) REFERENCES `output` (`idOutput`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="testing" view="colnames">
+<left>597</left>
+<top>320</top>
+<width>97</width>
+<height>231</height>
+<sql_create_table>CREATE TABLE `testing` (
+  `idTesting` int(9) NOT NULL AUTO_INCREMENT,
+  `idOutput` varchar(3) DEFAULT NULL,
+  `F1` double NOT NULL,
+  `F2` double NOT NULL,
+  `F3` double NOT NULL,
+  `F4` double NOT NULL,
+  `F5` double NOT NULL,
+  `F6` double NOT NULL,
+  `idUser` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idTesting`),
+  KEY `idUser` (`idUser`),
+  KEY `idOutput` (`idOutput`),
+  CONSTRAINT `testing_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`),
+  CONSTRAINT `testing_ibfk_2` FOREIGN KEY (`idOutput`) REFERENCES `output` (`idOutput`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="output" view="colnames">
+<left>907</left>
+<top>244</top>
+<width>94</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `output` (
+  `idOutput` varchar(3) NOT NULL,
+  `Output` text,
+  PRIMARY KEY (`idOutput`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="weight" view="colnames">
+<left>51</left>
+<top>120</top>
+<width>95</width>
+<height>311</height>
+<sql_create_table>CREATE TABLE `weight` (
+  `idWeight` varchar(10) NOT NULL,
+  `wi1` double NOT NULL,
+  `wi2` double NOT NULL,
+  `wi3` double NOT NULL,
+  `wi4` double NOT NULL,
+  `wi5` double NOT NULL,
+  `wi6` double NOT NULL,
+  `wi7` double NOT NULL,
+  `wi8` double NOT NULL,
+  `wi9` double NOT NULL,
+  `wi10` double NOT NULL,
+  `wi11` double NOT NULL,
+  `wi12` double NOT NULL,
+  `wi13` double NOT NULL,
+  `wi14` double NOT NULL,
+  `wi15` double NOT NULL,
+  `wi16` double NOT NULL,
+  `wi17` double NOT NULL,
+  `wi18` double NOT NULL,
+  `bi1` double NOT NULL,
+  `bi2` double NOT NULL,
+  `bi3` double NOT NULL,
+  `wj1` double NOT NULL,
+  `wj2` double NOT NULL,
+  `wj3` double NOT NULL,
+  `bj1` double NOT NULL,
+  `kb` double NOT NULL,
+  `idUser` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idWeight`),
+  KEY `idUser` (`idUser`),
+  CONSTRAINT `weight_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

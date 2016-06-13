@@ -1,0 +1,5 @@
+E:\EmotionApps\Emotion.Helper\bin\x64\Debug\Emotion.Helper.dll
+E:\EmotionApps\Emotion.Helper\bin\x64\Debug\Emotion.Helper.pdb
+E:\EmotionApps\Emotion.Helper\obj\x64\Debug\Emotion.Helper.dll
+E:\EmotionApps\Emotion.Helper\obj\x64\Debug\Emotion.Helper.pdb
+E:\EmotionApps\Emotion.Helper\obj\x64\Debug\Emotion.Helper.csprojResolveAssemblyReference.cache
