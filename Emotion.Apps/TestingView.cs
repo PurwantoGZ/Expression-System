@@ -146,7 +146,8 @@ namespace Emotion.Apps
             String mouthFileName = "haarcascade_mcs_mouth.xml";
             String eyeFileName = "haarcascade_eye.xml";
 
-            DetectFace.FaceTest(frame, faceFileName, mouthFileName, eyeFileName, faces, mouths, eyes, ref x1, ref y1, ref x2, ref y2,
+            DetectFace.FaceTest(frame, faceFileName, mouthFileName, eyeFileName, faces, mouths, eyes,
+                ref x1, ref y1, ref x2, ref y2,
                 ref mataX1, ref mataY1, ref mataX2, ref mataY2,
                 ref alisX1, ref alisY1, ref alisX2, ref alisY2);
 

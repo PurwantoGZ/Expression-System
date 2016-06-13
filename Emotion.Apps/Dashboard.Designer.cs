@@ -99,6 +99,7 @@
             this.panelTesting = new System.Windows.Forms.Panel();
             this.dataTesting = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnGrafik = new System.Windows.Forms.Button();
             this.metroTabControl1.SuspendLayout();
             this.userData.SuspendLayout();
             this.panelDataFavorite.SuspendLayout();
@@ -129,7 +130,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(851, 445);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -853,6 +854,7 @@
             // 
             // Pengujian
             // 
+            this.Pengujian.Controls.Add(this.btnGrafik);
             this.Pengujian.Controls.Add(this.countDataTesting);
             this.Pengujian.Controls.Add(this.label13);
             this.Pengujian.Controls.Add(this.btnViewTesting);
@@ -928,6 +930,17 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnGrafik
+            // 
+            this.btnGrafik.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrafik.Location = new System.Drawing.Point(601, 18);
+            this.btnGrafik.Name = "btnGrafik";
+            this.btnGrafik.Size = new System.Drawing.Size(112, 32);
+            this.btnGrafik.TabIndex = 4;
+            this.btnGrafik.Text = "Grafik";
+            this.btnGrafik.UseVisualStyleBackColor = true;
+            this.btnGrafik.Click += new System.EventHandler(this.btnGrafik_Click);
             // 
             // Dashboard
             // 
@@ -1042,5 +1055,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnGrafik;
     }
 }

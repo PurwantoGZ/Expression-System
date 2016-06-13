@@ -271,13 +271,15 @@ namespace Emotion.Machine
         {
             /*Cretae Node Sel*/
             /*Jumlah Hidden Layer Statis*/
+            #region Cretae Neuron
             HiddenLayer h1 = new HiddenLayer(numInput, learningRate);
             HiddenLayer h2 = new HiddenLayer(numInput, learningRate);
             HiddenLayer h3 = new HiddenLayer(numInput, learningRate);
 
             OutputLayer selOutput = new OutputLayer(numHidden, learningRate);
-
+            #endregion
             /* Retrieve Bobot Optimal*/
+            #region Retrieve Bobot
             for (int i = 0; i < 6; i++)
             {
                 h1.weights[i] = weights[i];
@@ -299,7 +301,7 @@ namespace Emotion.Machine
                 selOutput.weights[i] = weights[21 + i];
             }
             selOutput.biasWeights = weights[24];
-
+            #endregion
             try
             {
                 h1.inputs = new double[] { f1, f2, f3, f4, f5, f6 };

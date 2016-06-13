@@ -45,3 +45,4 @@ E:\EmotionApps\Emotion.Apps\obj\x64\Debug\Emotion.Apps.EditView.resources
 E:\EmotionApps\Emotion.Apps\obj\x64\Debug\Emotion.Apps.SearchingView.resources
 E:\EmotionApps\Emotion.Apps\obj\x64\Debug\Emotion.Apps.About.resources
 E:\EmotionApps\Emotion.Apps\obj\x64\Debug\Emotion.Apps.detailTestingView.resources
+E:\EmotionApps\Emotion.Apps\obj\x64\Debug\Emotion.Apps.GraphicsView.resources

@@ -22,6 +22,7 @@ namespace Emotion.Apps
         //int CameraDevice = 0; //Variable to track camera device selected
         Video_Device[] WebCams; //List containing all the camera available
         detailTestingView detailView = null;
+        GraphicsView grapicsView = null;
         MySQL db = new MySQL();
 
         int numDataTraining = 0;
@@ -252,6 +253,26 @@ namespace Emotion.Apps
             txtGambar.Text = favoriteName[3];
             txtBook.Text = favoriteName[4];
             txtWarna.Text = favoriteName[5];
+        }
+
+        delegate void graphicsViewLoaded(object sender,FormClosedEventArgs e);
+        void grapicsViewClosed(object sender, FormClosedEventArgs e)
+        {
+            if (btnGrafik.InvokeRequired)
+            {
+                graphicsViewLoaded f = new graphicsViewLoaded(grapicsViewClosed);
+                this.Invoke(f,new object[] { sender,e});
+            }
+            else
+            {
+                grapicsView = null;
+            }
+        }
+        private void btnGrafik_Click(object sender, EventArgs e)
+        {
+            grapicsView = new GraphicsView();
+            grapicsView.FormClosed += new FormClosedEventHandler(grapicsViewClosed);
+            grapicsView.ShowDialog();
         }
 
         private void cbidUser_SelectedIndexChanged(object sender, EventArgs e)
